@@ -28,14 +28,14 @@ class Blip2Base(BaseModel):
     @classmethod
     def init_tokenizer(cls):
         #tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-        tokenizer = BertTokenizer.from_pretrained("/data/oss_bucket_0/shared_models/huggingface/bert-base-uncased")
+        tokenizer = BertTokenizer.from_pretrained("/data/oss_bucket_0/shared_models/huggingface/bert-base-uncased/")
         tokenizer.add_special_tokens({"bos_token": "[DEC]"})
         return tokenizer
 
     @classmethod
     def init_Qformer(cls, num_query_token, vision_width):
         #encoder_config = BertConfig.from_pretrained("bert-base-uncased")
-        encoder_config = BertConfig.from_pretrained("/data/oss_bucket_0/shared_models/huggingface/bert-base-uncased")
+        encoder_config = BertConfig.from_pretrained("/data/oss_bucket_0/shared_models/huggingface/bert-base-uncased/")
         encoder_config.encoder_width = vision_width
         # insert cross-attention layer every other block
         encoder_config.add_cross_attention = True
