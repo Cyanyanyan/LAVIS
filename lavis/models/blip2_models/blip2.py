@@ -61,6 +61,7 @@ class Blip2Base(BaseModel):
         return visual_encoder, ln_vision
 
     def load_from_pretrained(self, url_or_filename):
+        logging.info("url_or_filename %s" % url_or_filename)
         if is_url(url_or_filename):
             cached_file = download_cached_file(
                 url_or_filename, check_hash=False, progress=True
